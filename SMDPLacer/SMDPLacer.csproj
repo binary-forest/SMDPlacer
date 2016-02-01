@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D3A66981-CDD7-4888-9C52-56479BB51403}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>SMDPLacer</RootNamespace>
+    <AssemblyName>SMDPLacer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.Contrib\Emgu.CV.Contrib.csproj">
+      <Project>{787d75d2-fe4d-4739-b9a5-2fb2617a42cc}</Project>
+      <Name>Emgu.CV.Contrib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.Cuda\Emgu.CV.Cuda.csproj">
+      <Project>{8728cb1f-f193-4f75-aea9-221aa85a3e80}</Project>
+      <Name>Emgu.CV.Cuda</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.ML\Emgu.CV.ML.csproj">
+      <Project>{0e89ea04-c88c-410e-9a5a-9cbb8c42a027}</Project>
+      <Name>Emgu.CV.ML</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.OCR\Emgu.CV.OCR.csproj">
+      <Project>{fda79b5f-80c6-41fa-a1d6-82de69dbb4a1}</Project>
+      <Name>Emgu.CV.OCR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.Shape\Emgu.CV.Shape.csproj">
+      <Project>{61b5a667-1bf5-4580-ad09-07d6d7ad7e3d}</Project>
+      <Name>Emgu.CV.Shape</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.Stitching\Emgu.CV.Stitching.csproj">
+      <Project>{d9c9b824-2b7a-48c0-a7d3-484410288cd2}</Project>
+      <Name>Emgu.CV.Stitching</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.Superres\Emgu.CV.Superres.csproj">
+      <Project>{806ec1b0-95d0-402b-a9f3-2d3de78dc807}</Project>
+      <Name>Emgu.CV.Superres</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.UI\Emgu.CV.UI.csproj">
+      <Project>{90e78bbf-c7fe-4d8e-ade1-75448e866fdb}</Project>
+      <Name>Emgu.CV.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV.VideoStab\Emgu.CV.VideoStab.csproj">
+      <Project>{91a08b78-2fa0-4887-8975-486ce5fc74b3}</Project>
+      <Name>Emgu.CV.VideoStab</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.CV\Emgu.CV.csproj">
+      <Project>{9a1a77fe-f01b-495e-87b7-4b16e4f8c908}</Project>
+      <Name>Emgu.CV</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\Libraries\Emgu\emgucv-windows-universal 3.0.0.2157\Emgu.Util\Emgu.Util.csproj">
+      <Project>{7c2c5325-8235-4a24-9c67-6bd79a4679e2}</Project>
+      <Name>Emgu.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
